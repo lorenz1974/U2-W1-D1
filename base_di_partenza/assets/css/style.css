@@ -233,7 +233,6 @@ footer a {
  Io ce l'ho messo.
 
  */
-
 #imgBorder {
     padding: 0;
     margin: 0 0 1rem 0;
@@ -438,8 +437,8 @@ perché risultano più gradevoli alla vista
     }
 
     iframe {
-        margin: 0;
-        width: 48%;
+        margin: 0 auto;
+        width: 49%;
         height: 150px;
         display: inline-block;
         vertical-align: top;
@@ -447,8 +446,8 @@ perché risultano più gradevoli alla vista
     }
 
     article section {
-        margin: 0;
-        width: 48%;
+        margin: 0 auto;
+        width: 50%;
         border-radius: 20px;
         display: inline-block;
     }
