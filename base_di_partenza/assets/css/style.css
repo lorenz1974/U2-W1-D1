@@ -1,0 +1,485 @@
+/* IMPOSTAZIONI GENERALI */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Poppins, 'Helvetica Neue', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    padding: 15px;
+    background-image: url('../img/sfondo.png');
+    background-position: center center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+hr {
+    display: none;
+}
+
+/* rimuove l'elemento */
+
+/* HEADER */
+header {
+    background: rgb(0, 160, 198);
+    background: linear-gradient(180deg, rgba(0, 160, 198, 1) 0%, rgba(3, 109, 134, 1) 68%);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 3px 3px #444;
+    margin-bottom: 1.5em;
+    padding: 2em 1.5em;
+}
+
+header div img {
+    margin-bottom: 20px;
+}
+
+header nav ul {
+    margin: 0;
+}
+
+header nav li {
+    list-style: none;
+}
+
+header nav li a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav li a:hover {
+    color: red;
+}
+
+header nav li a::before {
+    content: "\22c6\0020";
+}
+
+/* MAIN */
+main {
+    background-color: #fff;
+    box-shadow: 0 3px 3px #444;
+    padding: 2em 1em;
+    margin-bottom: 1.5em;
+}
+
+section {
+    background-color: #e3e3e3;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+section h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+/* ELEMENTI NEL MAIN - ARTICLE */
+h1 {
+    font-size: 2.6rem;
+    font-weight: bold;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.7em;
+}
+
+p,
+address,
+ul,
+ol,
+dl,
+blockquote {
+    margin-bottom: 1.2em;
+}
+
+h1+p {
+    color: #a0a0a0;
+}
+
+ul,
+ol {
+    margin-left: 2em;
+}
+
+a {
+    color: #00A0C6;
+    font-weight: bold;
+}
+
+strong {
+    color: #a02571;
+    font-weight: bold;
+}
+
+code {
+    background-color: #e3e3e3;
+    border: 1px solid #969494;
+    border-radius: 5px;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2em;
+    border-radius: 20px;
+}
+
+/* TABELLE */
+table {
+    margin-bottom: 2em;
+}
+
+caption {
+    font-weight: bold;
+    font-style: italic;
+}
+
+thead tr {
+    background-color: #3f6bca;
+    color: #ffffff;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #3f6bca;
+}
+
+/* FORM */
+input {
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px dashed #333;
+}
+
+button {
+    padding: 4px 7px;
+    background-color: #3f6bca;
+    border: 0;
+    color: white;
+    font-weight: bold;
+}
+
+/* ELEMENTI NELL' ASIDE */
+aside h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+aside div {
+    background-color: #e3e3e3;
+    border: 1px solid #c3c3c3;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+aside div p:last-child {
+    margin-bottom: 0;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+
+/* FOOTER */
+footer {
+    background: rgb(53, 53, 53);
+    background: linear-gradient(0deg, rgba(53, 53, 53, 1) 0%, rgba(5, 85, 103, 1) 68%);
+    box-shadow: 0 3px 3px #444;
+    color: #f0f0f0;
+    padding: 1em;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+footer a {
+    color: fuchsia;
+}
+
+/*
+ MEDIA QUERIES
+
+ Parto dalla dimensione minima del mockup (320px) e vado a scalare in base alle dimensioni del dispositivo.
+
+ L'immagine del badge ha sempre lo stesso bordo quindi quello lo setto al di fuori delle media queries.
+
+ Porto le dimensioni dell'immagine del logo nel CSS levandole dall'HTML per gestirle dinamicamente con le media queries.
+
+ Manca lo sfondo grigio sotto la scritta "Novità" dell'h2 della section, ma non so se sia un errore o meno.
+ Io ce l'ho messo.
+
+ */
+
+#imgBorder {
+    padding: 0;
+    margin: 0 0 1rem 0;
+    border: 3px solid #a02571;
+    width: 76px;
+    height: 76px;
+}
+
+#imgBorder img {
+    border: 3px solid rgb(0, 160, 198);
+    width: 70px;
+}
+
+section h2 {
+    background-color: rgba(0, 0, 0, 0.2);
+    text-transform: capitalize;
+}
+
+/*
+320
+- mettere in orizzontale il menu di navigazione
+- aumentare la dimensione del titolo che porto, per fare cifra tonda, a 3rem
+- ridimensionare l'iframe a 300x120 spostando i parametri width e height da inline a css
+- ridurre il carattere di h1+p nell'articolo (meta)
+- ridurre il carattere di p, ul, ol, tr
+- Ingrandire il carattere del footer
+*/
+@media screen and (min-width: 320px) {
+
+
+    header div img {
+        width: 150px;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 1em;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h1+p {
+        font-size: 1.15rem;
+    }
+
+    iframe {
+        /* riproduco il mockup ma a queste dimensioni non so come si possa vedere il video */
+        width: 100%;
+        height: 110px;
+    }
+
+    p,
+    ul,
+    ol,
+    tr {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        font-size: 1.4rem;
+    }
+}
+
+/*
+578
+- mantenere in orizzontale il menu di navigazione
+- aumentare la dimensione del titolo che porto, per fare cifra tonda, a 4.5rem
+- l'iframe non va toccato, diventa sempre più fino in proporzione alla larghezza del dispositivo ma questo c'è sul mockup
+- aumentare il carattere di h1+p nell'articolo (meta)
+- centrare e aumentare i margini verticali della tabella
+- allargare e allargare il campo mail della newsletter e il bottone
+
+Nel mockup la tabella sembrerebbe un po' più piccola ma la lascio così per migliore leggibilità
+
+*/
+@media screen and (min-width: 577px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h1+p {
+        font-size: 1.5rem;
+    }
+
+    p,
+    ul,
+    ol,
+    tr {
+        font-size: 1.5rem;
+    }
+
+    table {
+        margin: 5rem auto;
+    }
+
+    input[type="email"] {
+        width: 70%;
+        height: 4rem;
+    }
+
+    button {
+        padding: 0 2.5rem;
+        height: 4rem;
+    }
+}
+
+/*
+768
+- Fissare la larghezza dell' header, main e footer a 750px perché il mockup è di 768px. A domensioni superiori il contenuto è centrato e fisso
+- Mettere in inline tutti gli elementi dell'header
+- Mettere inline il video e l'iscrizione alla newsletter
+- Mettere in line gli elementi dell'aside
+- Cambiare la dimensione dell'immagine dell'article
+- Adeguare tutti i font al mockup
+- Adeguare la larghezza della tabella al mockup
+- Adeguare dimensioni dell'iframe e del campo mail della newsletter e il bottone
+
+Nel mockup sia iframe che newsletter che i div nell'aside sono attaccati ma francamente preferisco lasciarci un minimo di spazio
+perché risultano più gradevoli alla vista
+*/
+@media screen and (min-width: 769px) {
+
+    header,
+    main,
+    footer {
+        width: 750px;
+        margin: 0 auto;
+    }
+
+    header {
+        padding: 0;
+        width: 750px;
+        height: 65px;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+
+    header div,
+    header nav,
+    header nav ul,
+    header nav ul li,
+    header div img,
+    header div p {
+        margin: 0;
+        padding: 0;
+        display: inline;
+        vertical-align: middle;
+        font-size: 1rem;
+    }
+
+    header div img {
+        margin: 1rem 3rem 1rem 3rem;
+    }
+
+    #imgBorder {
+        padding: 0;
+        margin: 0 0 1rem 0;
+        border: 3px solid #a02571;
+        width: 56px;
+        height: 56px;
+    }
+
+    #imgBorder img {
+        border: 3px solid rgb(0, 160, 198);
+        width: 50px;
+    }
+
+    header div p {
+        font-size: 1.0rem;
+    }
+
+    header nav ul {
+        margin-left: 18rem;
+        font-size: 1rem;
+    }
+
+    header nav ul li {
+        margin-left: 1rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h1+p {
+        font-size: 1.2rem;
+    }
+
+    p,
+    ul,
+    ol,
+    tr {
+        font-size: 1.1rem;
+    }
+
+    table {
+        width: 80%;
+        margin: 5rem auto;
+    }
+
+    iframe {
+        margin: 0;
+        width: 48%;
+        height: 150px;
+        display: inline-block;
+        vertical-align: top;
+
+    }
+
+    article section {
+        margin: 0;
+        width: 48%;
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+    input[type="email"] {
+        width: 60%;
+        height: 3rem;
+    }
+
+    button {
+        padding: 0 2.5rem;
+        height: 3rem;
+    }
+
+    aside h2 {
+        margin: 3rem 3rem;
+    }
+
+    aside {
+        text-align: center;
+
+    }
+
+    aside div {
+        display: inline-block;
+        margin: 0;
+        width: 32%;
+    }
+}
+
+/*
+Inutile perché da 768 in poi il layout è fisso e centrato
+@media screen and (min-width: 1201px) {}
+*/
